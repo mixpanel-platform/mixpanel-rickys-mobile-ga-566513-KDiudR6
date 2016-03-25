@@ -12,20 +12,10 @@
   <body class="mixpanel-platform-body">
     <script>
 var marker;
-$.ajax({
-            headers: { "Accept": "application/json"},
-            type: 'GET',
-            crossDomain: true,
-            dataType: 'jsonp',
-            url: 'https://mixpanel.com/report/91271/bookmarks/segmentation3/list/',
-            crossDomain: true,
-            beforeSend: function(xhr){
-                xhr.withCredentials = true;
-          },
-            success: function(data){
-                marker = String(data)
-            }
- });
+$.get("https://mixpanel.com/report/91271/bookmarks/segmentation3/list/", function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+    });
+    
     </script>
   </body>
 </html>
