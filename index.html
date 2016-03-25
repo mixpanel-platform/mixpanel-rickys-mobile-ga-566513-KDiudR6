@@ -14,10 +14,9 @@ $.ajax({
             headers: { "Accept": "application/json"},
             type: 'GET',
             crossDomain: true,
-            dataType: 'script',
+            dataType: 'script json',
             jsonp: false,
             jsonpCallback: "callbackName",
-            converters: {"script json": function(data) {return data;}},
             url: 'https://mixpanel.com/report/91271/bookmarks/segmentation3/list/',
             crossDomain: true,
             beforeSend: function(xhr){
