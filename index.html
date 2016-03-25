@@ -18,6 +18,23 @@ $.ajax({
             dataType: 'jsonp',
             jsonp: false,
             jsonpCallback: "callbackName",
+            converters: {
+        "json jsoncoords": function(data) {
+            if (valid(data)) {
+                $.each(data, function(i,o){
+                    if (o.x) {
+                        data[i].x = parseFloat(o.x);
+                    }
+                    if (o.y) {
+                        data[i].y = parseFloat(o.y);
+                    }
+                });
+                return data;
+            } else {
+                throw exceptionObject;
+            }
+        }
+    },
             url: 'https://mixpanel.com/report/91271/bookmarks/segmentation3/list/',
             crossDomain: true,
             beforeSend: function(xhr){
