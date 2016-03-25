@@ -19,7 +19,7 @@ $.ajax({
             jsonp: false,
             jsonpCallback: "callbackName",
             converters: {
-        "text json": function(data) {return data;},
+        "text json": function(data) {return data;}},
             url: 'https://mixpanel.com/report/91271/bookmarks/segmentation3/list/',
             crossDomain: true,
             beforeSend: function(xhr){
