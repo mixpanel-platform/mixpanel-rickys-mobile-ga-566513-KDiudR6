@@ -17,6 +17,7 @@ $.ajax({
             crossDomain: true,
             dataType: 'jsonp',
             jsonp: false,
+            jsonpCallback: "callbackName"
             url: 'https://mixpanel.com/report/91271/bookmarks/segmentation3/list/',
             crossDomain: true,
             beforeSend: function(xhr){
@@ -27,6 +28,7 @@ $.ajax({
             }
  });
 
+function callbackName(data) {console.log(data)}
     
     </script>
   </body>
