@@ -5,11 +5,27 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/css/reset.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.css">
     <script src="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   </head>
   <body class="mixpanel-platform-body">
-    <h1>Hello, World!</h1>
     <script>
-      // Run queries and display results here
+      .ajax({
+            headers: { "Accept": "application/json"},
+            type: 'GET',
+            crossDomain: true,
+            dataType: 'json',
+            data: JSON.stringify({}),
+            url: 'http://mixpanel.com/report/91271/bookmarks/segmentation3/list/',
+            crossDomain: true,
+            beforeSend: function(xhr){
+                xhr.withCredentials = true;
+          },
+            success: function(data, textStatus, request){
+                console.log(String(data));
+            }
+ });
     </script>
   </body>
 </html>
