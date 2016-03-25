@@ -23,7 +23,7 @@ $.ajax({
                 xhr.withCredentials = true;
           },
             success: function(data){
-                marker = JSON.stringify(data)
+                marker = String(data)
             }
  });
     </script>
